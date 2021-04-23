@@ -1,0 +1,129 @@
+openapi: 3.0.1
+info:
+  title: MoviesAPI
+  description: MoviesAPI
+  version: '1.0'
+servers:
+  - url: 'http://localhost:4000'
+paths:
+  /api/movies:
+    get:
+      description: Get all movies
+      responses:
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:4000'
+    post:
+      description: Create new movie
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                movie:
+                  type: object
+                  properties:
+                    duration:
+                      type: integer
+                    director:
+                      type: string
+                    release:
+                      type: string
+                    genre:
+                      type: string
+                    about:
+                      type: string
+                    title:
+                      type: string
+            examples:
+              '0':
+                value: "{\r\n    \"movie\": \r\n    {\r\n        \"title\": \"Interstellar\",\r\n        \"genre\": \"science fiction\",\r\n        \"director\": \"Christopher Nolan\",\r\n        \"release\": \"2014-11-05\",\r\n        \"duration\": 169,\r\n        \"about\": \"n a post-truth 2067,[5] crop blights and dust storms threaten humanity's survival. Joseph Cooper, a widowed engineer and former NASA pilot turned farmer, lives with his father-in-law, Donald; his 15-year-old son, Tom Cooper, and 10-year-old daughter, Murphy Murph Cooper. After a dust storm, strange dust patterns inexplicably appear on Murphy's bedroom floor; she attributes the anomaly to a ghost.\"\r\n    }\r\n}"
+      responses:
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:4000'
+    servers:
+      - url: 'http://localhost:4000'
+  /api/movies/{id}:
+    get:
+      description: Get movie with id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Movie ID
+          schema:
+            type : integer
+            format: int64
+            minimum: 1
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+        - url: 'http://localhost:4000'
+    put:
+      description: Update movie with id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Movie ID
+          schema:
+            type : integer
+            format: int64
+            minimum: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                movie:
+                  type: object
+                  properties:
+                    duration:
+                      type: integer
+                    director:
+                      type: string
+                    release:
+                      type: string
+                    genre:
+                      type: string
+                    about:
+                      type: string
+                    title:
+                      type: string
+            examples:
+              '0':
+                value: "{\r\n    \"movie\": \r\n    {\r\n        \"about\": \"nieuwe uitleg\",\r\n        \"director\": \"Nick\"\r\n    }\r\n}"
+      responses:
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:4000'
+    delete:
+      description: Delete movie with id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Movie ID
+          schema:
+            type : integer
+            format: int64
+            minimum: 1
+      responses:
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:4000'
+    servers:
+      - url: 'http://localhost:4000'
