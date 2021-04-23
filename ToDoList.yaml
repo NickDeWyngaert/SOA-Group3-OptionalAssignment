@@ -1,0 +1,134 @@
+---
+swagger: "2.0"
+info:
+  description: defaultDescription
+  version: "0.1"
+  title: defaultTitle
+paths:
+  /to_do_items/:
+    get:
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        "200":
+          description: Definition generated from Swagger Inspector
+          schema:
+            $ref: '#/definitions/Model3'
+    post:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/Model0'
+        x-examples:
+          application/json: |-
+            {
+                "name": "test",
+                "course": "test",
+                "soort": "test"
+            }
+      responses:
+        "201":
+          description: Definition generated from Swagger Inspector
+          schema:
+            $ref: '#/definitions/Model4'
+  /to_do_items/1/:
+    put:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/Model1'
+        x-examples:
+          application/json: |-
+            {
+                "name": "testaanpassin",
+                "course": "test",
+                "soort": "test"
+            }
+      responses:
+        "200":
+          description: Definition generated from Swagger Inspector
+          schema:
+            $ref: '#/definitions/Model5'
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/Model2'
+        x-examples:
+          application/json: |-
+            {
+                "name": "testaanpassin",
+                "course": "test",
+                "soort": "test"
+            }
+      responses:
+        "204":
+          description: Definition generated from Swagger Inspector
+          schema:
+            type: string
+definitions:
+  Model0:
+    properties:
+      name:
+        type: string
+      course:
+        type: string
+      soort:
+        type: string
+  Model1:
+    properties:
+      name:
+        type: string
+      course:
+        type: string
+      soort:
+        type: string
+  Model2:
+    properties:
+      name:
+        type: string
+      course:
+        type: string
+      soort:
+        type: string
+  Model3:
+    type: array
+  Model4:
+    properties:
+      id:
+        type: integer
+        format: int32
+      name:
+        type: string
+      course:
+        type: string
+      soort:
+        type: string
+  Model5:
+    properties:
+      id:
+        type: integer
+        format: int32
+      name:
+        type: string
+      course:
+        type: string
+      soort:
+        type: string
