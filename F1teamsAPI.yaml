@@ -1,0 +1,90 @@
+openapi: 3.0.1
+info:
+  title: F1teamsAPI
+  description: F1teamsAPI
+  version: '1.0'
+servers:
+  - url: 'http://localhost:5000'
+paths:
+  /f1_teams:
+    get:
+      description: Get all f1 teams
+      responses:
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:5000'
+    servers:
+        - url: 'http://localhost:5000'
+  /f1_teams/create:
+    post:
+      description: Create new movie
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                naam:
+                  type: string
+                budget:
+                  type: integer
+                beschrijving:
+                  type: string
+      responses:
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:5000'
+    servers:
+      - url: 'http://localhost:5000'
+  /f1_teams/delete/{index}:
+    delete:
+      description: Delete f1 team with index
+      parameters:
+        - name: index
+          in: path
+          required: true
+          description: Index of f1 team
+          schema:
+            type: integer
+            format: int64
+            minimum: 1
+      responses:
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:5000'
+    servers:
+      - url: 'http://localhost:5000'
+  /f1_teams/update/{index}:
+    put:
+      description: Update movie with id
+      parameters:
+        - name: index
+          in: path
+          required: true
+          description: Index of f1 team
+          schema:
+            type: integer
+            format: int64
+            minimum: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                naam:
+                  type: string
+                budget:
+                  type: integer
+                beschrijving:
+                  type: string
+      responses:
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:5000'
+    servers:
+      - url: 'http://localhost:5000'
