@@ -11,6 +11,10 @@
 - [Creating a REST API Using Swagger](https://www.youtube.com/watch?v=PsArgiTPA2g&t=95s)
 - [How to Publish and Subscribe APIs](https://www.youtube.com/watch?v=-TicJqTjq2M&t=969s)
 
+### OpenAPI file
+- [Online editor](https://editor.swagger.io/)
+- [Basic structure](https://swagger.io/docs/specification/basic-structure/)
+
 ## Team members
 * Maxime Sateur
 * Nick De Wyngaert
