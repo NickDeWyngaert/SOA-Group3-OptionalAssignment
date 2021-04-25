@@ -1,134 +1,105 @@
----
-swagger: "2.0"
+openapi: 3.0.1
 info:
-  description: defaultDescription
-  version: "0.1"
-  title: defaultTitle
+  title: To_Do_ItemsAPI
+  description: API that allows you to create, read, update and delete items
+  version: '1.0'
+servers:
+  - url: 'http://localhost:8000'
 paths:
   /to_do_items/:
     get:
-      produces:
-      - application/json
-      parameters: []
+      description: Get all items
       responses:
-        "200":
-          description: Definition generated from Swagger Inspector
-          schema:
-            $ref: '#/definitions/Model3'
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:8000'
     post:
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: body
-        name: body
-        required: false
-        schema:
-          $ref: '#/definitions/Model0'
-        x-examples:
-          application/json: |-
-            {
-                "name": "test",
-                "course": "test",
-                "soort": "test"
-            }
+      description: Create new item
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                course:
+                  type: string
+                soort:
+                  type: string
       responses:
-        "201":
-          description: Definition generated from Swagger Inspector
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:8000'
+    servers:
+      - url: 'http://localhost:8000'
+  /to_do_items/{id}:
+    get:
+      description: Get item with id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: item ID
           schema:
-            $ref: '#/definitions/Model4'
-  /to_do_items/1/:
+            type : integer
+            format: int64
+            minimum: 1
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+        - url: 'http://localhost:8000'
     put:
-      consumes:
-      - application/json
-      produces:
-      - application/json
+      description: Update item with id
       parameters:
-      - in: body
-        name: body
-        required: false
-        schema:
-          $ref: '#/definitions/Model1'
-        x-examples:
-          application/json: |-
-            {
-                "name": "testaanpassin",
-                "course": "test",
-                "soort": "test"
-            }
-      responses:
-        "200":
-          description: Definition generated from Swagger Inspector
+        - name: id
+          in: path
+          required: true
+          description: item ID
           schema:
-            $ref: '#/definitions/Model5'
+            type : integer
+            format: int64
+            minimum: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                course:
+                  type: string
+                soort:
+                  type: string
+      responses:
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:8000'
     delete:
-      consumes:
-      - application/json
+      description: Delete item with id
       parameters:
-      - in: body
-        name: body
-        required: false
-        schema:
-          $ref: '#/definitions/Model2'
-        x-examples:
-          application/json: |-
-            {
-                "name": "testaanpassin",
-                "course": "test",
-                "soort": "test"
-            }
-      responses:
-        "204":
-          description: Definition generated from Swagger Inspector
+        - name: id
+          in: path
+          required: true
+          description: item ID
           schema:
-            type: string
-definitions:
-  Model0:
-    properties:
-      name:
-        type: string
-      course:
-        type: string
-      soort:
-        type: string
-  Model1:
-    properties:
-      name:
-        type: string
-      course:
-        type: string
-      soort:
-        type: string
-  Model2:
-    properties:
-      name:
-        type: string
-      course:
-        type: string
-      soort:
-        type: string
-  Model3:
-    type: array
-  Model4:
-    properties:
-      id:
-        type: integer
-        format: int32
-      name:
-        type: string
-      course:
-        type: string
-      soort:
-        type: string
-  Model5:
-    properties:
-      id:
-        type: integer
-        format: int32
-      name:
-        type: string
-      course:
-        type: string
-      soort:
-        type: string
+            type : integer
+            format: int64
+            minimum: 1
+      responses:
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:8000'
+    servers:
+      - url: 'http://localhost:8000'
