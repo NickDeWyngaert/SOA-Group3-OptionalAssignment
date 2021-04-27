@@ -1,0 +1,90 @@
+openapi: 3.0.1
+info:
+  title: F1teamsAPI
+  description: F1teamsAPI
+  version: '1.0'
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /products/all:
+    get:
+      description: Get all products
+      responses:
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:8080'
+    servers:
+        - url: 'http://localhost:8080'
+  /products/create:
+    post:
+      description: Create new product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                price:
+                  type: integer
+                description:
+                  type: string
+      responses:
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:8080'
+    servers:
+      - url: 'http://localhost:8080'
+  /products/delete/{index}:
+    delete:
+      description: Delete f1 team with index
+      parameters:
+        - name: index
+          in: path
+          required: true
+          description: Index of product
+          schema:
+            type: integer
+            format: int64
+            minimum: 1
+      responses:
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:8080'
+    servers:
+      - url: 'http://localhost:8080'
+  /products/edit/{index}:
+    put:
+      description: Update product with id
+      parameters:
+        - name: index
+          in: path
+          required: true
+          description: Index of product
+          schema:
+            type: integer
+            format: int64
+            minimum: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                price:
+                  type: integer
+                description:
+                  type: string
+      responses:
+        default:
+          description: Auto generated using Swagger Inspector
+      servers:
+        - url: 'http://localhost:8080'
+    servers:
+      - url: 'http://localhost:8080'
