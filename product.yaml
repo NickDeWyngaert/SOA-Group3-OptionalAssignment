@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
-  title: F1teamsAPI
-  description: F1teamsAPI
+  title: productCRUD
+  description: product crud yaml file
   version: '1.0'
 servers:
   - url: 'http://localhost:8080'
@@ -40,7 +40,7 @@ paths:
       - url: 'http://localhost:8080'
   /products/delete/{index}:
     delete:
-      description: Delete f1 team with index
+      description: Delete product with index
       parameters:
         - name: index
           in: path
