@@ -6,7 +6,7 @@ info:
 servers:
   - url: 'http://localhost:8000'
 paths:
-  /to_do_items/:
+  /todo:
     get:
       description: Get all items
       responses:
@@ -35,28 +35,7 @@ paths:
         - url: 'http://localhost:8000'
     servers:
       - url: 'http://localhost:8000'
-  /to_do_items/{id}:
-    get:
-      description: Get item with id
-      parameters:
-        - name: id
-          in: path
-          required: true
-          description: item ID
-          schema:
-            type : integer
-            format: int64
-            minimum: 1
-      responses:
-        '200':
-          description: Auto generated using Swagger Inspector
-          content:
-            application/json; charset=utf-8:
-              schema:
-                type: string
-              examples: {}
-      servers:
-        - url: 'http://localhost:8000'
+  /todo/{id}:
     put:
       description: Update item with id
       parameters:
